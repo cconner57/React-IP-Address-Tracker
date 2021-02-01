@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap');
+@import './CSSReset.css';
+
+$text: hsl(0, 0%, 100%);
+$textStyle: 'Rubik', sans-serif;
+$black: hsl(0, 0%, 17%);
+$gray: hsl(0, 0%, 59%);
+$input: 18px;
+
+.App-Container {
+	position: relative;
+	min-height: 100vh;
+	min-width: 100vw;
+}
+
+.Input-Container {
+	min-height: 31vh;
+	min-width: 100vw;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background: url('./images/pattern-bg.png') no-repeat center;
+	h1 {
+		color: $text;
+		font-size: 2.25rem;
+		font-family: $textStyle;
+		font-weight: 700;
+		margin: 1.5rem 0;
+	}
+	input {
+		min-width: 29rem;
+		padding: 15px 20px;
+		border: none;
+		border-radius: 10px 0 0 10px;
+		color: $gray;
+		font-size: 1rem;
+		font-family: $textStyle;
+	}
+	button {
+		min-width: 3rem;
+		min-height: 3.1rem;
+		border: none;
+		border-radius: 0 10px 10px 0;
+		background-color: hsl(0, 0%, 0%);
+		&:hover {
+			cursor: pointer;
+		}
+	}
+	.Input-Error {
+		padding: 0.5rem 1rem;
+		border-radius: 10px;
+		background-color: hsla(0, 0%, 0%, 0.3);
+		color: red;
+		font-family: $textStyle;
+		font-weight: 500;
+	}
+}
+
+.Results-Container {
+	position: absolute;
+	top: 32%;
+	left: 50%;
+	z-index: 10;
+	min-height: 20vh;
+	min-width: 70vw;
+	display: flex;
+	justify-content: space-evenly;
+	border-radius: 15px;
+	background-color: hsl(0, 0%, 100%);
+	transform: translate(-50%, -50%);
+	box-shadow: 2px 0px 4px 1px hsla(236, 63%, 33%, 0.37);
+	.Results-Data {
+		min-height: 2rem;
+		min-width: 12rem;
+		margin: 2rem 0;
+		padding: 0 0 0 2rem;
+		display: flex;
+		flex-direction: column;
+		border-left: 2px solid $gray;
+		h2 {
+			margin-bottom: 0.5rem;
+			font-size: 0.85rem;
+			font-family: $textStyle;
+			color: $gray;
+		}
+		h1 {
+			margin-right: 0.5rem;
+			font-size: 1.35rem;
+			font-family: $textStyle;
+			color: $black;
+		}
+	}
+	.Results-Data:first-child {
+		border: none;
+	}
+}
+
+.Maps-Container {
+	max-height: 69vh;
+	min-width: 100vw;
+	overflow: hidden;
+	.leaflet {
+		height: 69vh;
+		z-index: 1;
+	}
+}
